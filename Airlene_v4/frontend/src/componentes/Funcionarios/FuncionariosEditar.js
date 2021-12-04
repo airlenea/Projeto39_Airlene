@@ -4,14 +4,10 @@ import urlapi from "../../services/api.js"
 
 import { useEffect, useState } from 'react';
 
-import { useParams, Link, useHistory } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 export default function FuncionariosEditar() {
     let idBoolean = false;        // edição
-
-    const history = useHistory();
-
-    //    const [autor, setAutor] = useState([]);
 
     const [codigo, setCodigo] = useState(0);
     const [ativoInativo, setAtivo] = useState('');
@@ -20,27 +16,26 @@ export default function FuncionariosEditar() {
     const [depto, setDepto] = useState('');
     const [registro, setRegistro] = useState('');
 
-    const [checked, setChecked] = useState(false);
-    //    const [nomePag, setNomePag] = useState(false);
-
+    const [ setChecked] = useState(false);
+   
     const { idFuncionario } = useParams();
 
     function IfCrud() {
-        //        let nomeCampo = '';
+      
         console.log('Id Funcionario: ' + idFuncionario + ' - ' + idBoolean)
         if (idFuncionario === 0) {
-            //            nomeCampo = 'Inclusão de Autor';
+          
             idBoolean = true;
         } else {
-            //            nomeCampo = 'Alteração de Autor';
+            
         }
-        //        setNomePag(nomeCampo);
+        
     }
 
     useEffect(() => {
         async function getFuncionarios() {
             console.log('Funcionario: ' + idFuncionario + ' - ' + idBoolean)
-            if (idFuncionario == 0) {
+            if (idFuncionario === 0) {
                 setChecked(true);
                 console.log('Inclusão de novo registro!')
             } else {
@@ -56,18 +51,14 @@ export default function FuncionariosEditar() {
                 setRegistro(data[0].fun_registro);
 
                 console.log(data[0].fun_nome)
-                //                } catch (error) {
-                //                    alert("Ocorreu um erro...");
-                //                }
+              
             }
         }
         IfCrud();
         getFuncionarios();
-    }, []);
+        }, []);
 
-    //    function toggle() {
-    //        setChecked(!checked)
-    //    }
+    
 
     async function handleFuncionarios(e) {
         e.preventDefault();

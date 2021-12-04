@@ -1,6 +1,8 @@
+CREATE DATABASE  IF NOT EXISTS `dados212d` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `dados212d`;
 -- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: dados212d
+-- Host: localhost    Database: dados212d
 -- ------------------------------------------------------
 -- Server version	8.0.26
 
@@ -151,7 +153,7 @@ CREATE TABLE `prefeituras` (
   `pre_cidade` varchar(20) NOT NULL,
   `pre_estado` char(2) NOT NULL,
   `pre_habitantes` int NOT NULL,
-  `pre_aniversario` date NOT NULL,
+  `pre_aniversario` varchar(6) NOT NULL,
   PRIMARY KEY (`pre_codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -162,7 +164,7 @@ CREATE TABLE `prefeituras` (
 
 LOCK TABLES `prefeituras` WRITE;
 /*!40000 ALTER TABLE `prefeituras` DISABLE KEYS */;
-INSERT INTO `prefeituras` VALUES (1,'A','Alexandre Ferreira','MDB','Franca','SP',350,'1824-11-28'),(2,'A','Katiuscia P L Mendes','PSD','Cristais Paulista','SP',9,'1959-07-28'),(3,'A','Duarte Nogueira','PSDB','Ribeirão Preto','SP',712,'1856-06-19'),(4,'A','Luiz Gonzaga Cintra','Avante','Claraval','MG',5,'1953-12-12');
+INSERT INTO `prefeituras` VALUES (1,'A','Alexandre Ferreira','MDB','Franca','SP',350000,'28-NOV'),(2,'A','Katiuscia P L Mendes','PSD','Cristais Paulista','SP',9000,'28-JUL'),(3,'A','Duarte Nogueira','PSDB','Ribeirão Preto','SP',712000,'19-JUN'),(4,'A','Luiz Gonzaga Cintra','Avante','Claraval','MG',5000,'12-DEZ');
 /*!40000 ALTER TABLE `prefeituras` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,4 +206,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-21 10:40:18
+-- Dump completed on 2021-12-04 17:00:59
